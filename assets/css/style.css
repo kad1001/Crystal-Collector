@@ -1,0 +1,26 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 1000px 800px;
+}
+.head {
+    border: 1px solid salmon;
+    padding: 25px;
+    background-color: salmon;
+    color: white;
+    max-width: 300px;
+    font-weight: 700;
+    margin: 2%;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.instructions {
+    border: 8px solid blanchedalmond;
+    background-color: blanchedalmond;
+    color: darkblue;
+    max-width: 400px;
+    padding: 3%;
+    margin: 2%;
+}
