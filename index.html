@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- style css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- javascript -->
     <script src="assets/javascript/game.js"></script>
     <title>Crystal Collector</title>
@@ -19,11 +21,11 @@
     </div>
 
     <div class="instructions">
-        <p>You will be given a random number at the start of the game</p>
+        <p>You will be given a random number at the start of the game (in the green box)</p>
         <br>
         <p>There are 4 crystals below. By clicking on one, you will add a specific amount of points to your total score</p>
         <br>
-        <p>To win the game, match your total score to the random number</p>
+        <p>To win the game, match your total score to the random number.</p>
         <p>If your total score goes above the random number, you lose!</p>
         <br>
         <p>The value of each crystal is hidden until you click on it</p>
@@ -31,17 +33,39 @@
         <p>Each time the game starts, the values of each crystal will reset</p>
     </div>
 
-    <!-- Random number -->
-    <div id="random"></div>
+    <div class="flexContainer">
+        <!-- Random number -->
+        <div id="random"></div>
 
-    <!-- win/lose -->
-    <div id="counter"></div>
+        <!-- win/lose -->
+        <div id="counter"></div>
+
+    </div>
 
     <!-- crystals -->
-    <div id="crystal1"></div>
-    <div id="crystal2"></div>
-    <div id="crystal3"></div>
-    <div id="crystal4"></div>
+    <div class="flexContainer">
+        <div id="crystal1">
+            <img src="assets/images/crystal1.png">
+        </div>
+        <div id="crystal2">
+            <img src="assets/images/crystal2.png">
+        </div>
+
+        <div id="crystal3">
+            <img src="assets/images/crystal3.png">
+        </div>
+
+        <div id="crystal4">
+            <img src="assets/images/crystal4.png">
+        </div>
+    </div>
+
+    <!-- total score -->
+    <div class="score">
+        <p>Your total score is:</p>
+    </div>
+
+    <div class="score" id="scoreNumber"></div>
     
 </body>
 </html>
