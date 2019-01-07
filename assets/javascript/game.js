@@ -16,7 +16,6 @@ $(document).ready(function() {
     var lose = [];
 
     // function to restart game
-    // random number between 19 and 120
 
 
     // clicking on an image restarts the game
@@ -102,7 +101,45 @@ $(document).ready(function() {
                     return
 
                 }
+
+
                 
+                // playing w possible functions to use instead of reiterating and being confused...
+                // playing with inheritence
+                var crystal = function() {};
+                crystal.prototype.initialize = function(ranval) {
+                    var ranval = Math.floor((Math.random() * 12) + 1);
+                    this.ranval = ranval;
+                }
+                crystal.prototype.describe = function(){
+                    return this.ranval;
+                }
+                
+                crystal.prototype.summed = function getSum(total, num) {
+                    return total + Math.round(num);
+                }
+
+                crystal.initialize();
+                crystal.describe();
+                crystal.summed();
+                
+                var score = function (randomNum, scoreArray) {
+                    this.randomNum = randomNum;
+                    this.scoreArray = scoreArray;
+                    this.total = function(){
+                        return this.randomNum + this.scoreArray;
+                    }
+                }
+                var crystal = new score(randomNum, scoreArray);
+                console.log(crystal.total());
+                // should output:
+                // random num and scorearray
+
+
+                
+
+          
+
         });
 
             
