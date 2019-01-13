@@ -25,6 +25,8 @@ body {
     margin: 2%;
 }
 
+
+
 #random {
     font-size: 2rem;
     color: black;
@@ -45,6 +47,10 @@ body {
     display: flex;
     padding: 1%;
     margin: 1%;
+}
+
+#questionsBody {
+    margin: 0%;
 }
 
 #crystal1 {
