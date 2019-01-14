@@ -8,8 +8,8 @@ $(document).ready(function() {
     var crys4val;
     var scoreArray;
     var newSum;
-    var wins;
-    var losses;
+    var wins = 0;
+    var losses = 0;
 
 
     // resets game vars
@@ -22,6 +22,7 @@ $(document).ready(function() {
         scoreArray = [];
         newSum = 0;
         $("#scoreNumber").empty();
+        $("#random").text(randomNum)
     };
 
 
@@ -40,8 +41,6 @@ $(document).ready(function() {
         }
     };
 
-
-
     const getSum = function getSum(total, num) {
         return total + Math.round(num);
     }
@@ -50,55 +49,38 @@ $(document).ready(function() {
         return total + num;
     };
 
-
+    // call game function to set vars
     game();
 
-    $("#random").text(randomNum);
+    $("#crystal1").click(function() {
+        scoreArray.push(crys1val);
+        sumFunc();
+        newSum = scoreArray.reduce(getSum)
+        $("#scoreNumber").text(newSum)
+        checkWins();
+    });
 
-        $("#crystal1").click(function() {
-            scoreArray.push(crys1val);
+    $("#crystal2").click(function() {
+            scoreArray.push(crys2val);
             sumFunc();
             newSum = scoreArray.reduce(getSum)
             $("#scoreNumber").text(newSum)
-            console.log("newSum", newSum)
-            console.log("randomNum", randomNum)
+            checkWins();
+
+        });
+        $("#crystal3").click(function() {
+            scoreArray.push(crys3val);
+            sumFunc();
+            newSum = scoreArray.reduce(getSum)
+            $("#scoreNumber").text(newSum)
             checkWins();
         });
-
-        $("#crystal2").click(function() {
-                scoreArray.push(crys2val);
-                sumFunc();
-                var newSum = scoreArray.reduce(getSum)
-                $("#scoreNumber").text(newSum)
-                if (newSum > randomNum){
-                    alert("You lose");
-                    location.relooad();
-                }
-
-            })
-            $("#crystal3").click(function() {
-                scoreArray.push(crys3val);
-                sumFunc();
-                var newSum = scoreArray.reduce(getSum)
-                $("#scoreNumber").text(newSum)
-                if (newSum > randomNum){
-                    alert("You lose");
-                    location.reload();
-                }
-
-            })
-            $("#crystal4").click(function() {
-                scoreArray.push(crys4val);
-                sumFunc();
-                var newSum = scoreArray.reduce(getSum)
-                $("#scoreNumber").text(newSum)
-                if (newSum > randomNum){
-                    alert("You lose");
-                    location.reload()
-                    // $("#scoreNumber").empty();
-                    // $("#losses").text(losses)
-                }
-
-            });
+        $("#crystal4").click(function() {
+            scoreArray.push(crys4val);
+            sumFunc();
+            newSum = scoreArray.reduce(getSum)
+            $("#scoreNumber").text(newSum)
+            checkWins();
+        });
 
 });
